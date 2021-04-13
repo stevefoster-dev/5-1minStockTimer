@@ -8,6 +8,8 @@ const year = document.getElementById("year");
 const loading = document.getElementById("loading");
 const fiveMinute = document.getElementById("fiveMinute");
 const oneMinute = document.getElementById("oneMinute");
+const minimizeFive = document.getElementById("minimizeFive");
+const minimizeOne = document.getElementById("minimizeOne");
 
 const currentYear = new Date().getFullYear();
 
@@ -80,11 +82,36 @@ function updateCountdownOne() {
   }
 }
 
+// Clear h1
+function clearTitle() {
+  minimizeOne.innerHTML = "";
+  minimizeFive.innerHTML = "";
+  minutes.style.fontSize = "250%";
+  seconds.style.fontSize = "250%";
+  secondsOne.style.fontSize = "250%";
+}
+
+// Restore h1
+function restoreTitle() {
+  minimizeOne.innerHTML = "1 Minute";
+  minimizeFive.innerHTML = "5 Minute";
+  minutes.style.fontSize = "150%";
+  seconds.style.fontSize = "150%";
+  secondsOne.style.fontSize = "150%";
+}
+
 // Show spinner before countdown
 setTimeout(() => {
   loading.remove();
   countdown.style.display = "flex";
 }, 1000);
+
+// Event Listeners
+minimizeFive.addEventListener("click", clearTitle);
+minimizeOne.addEventListener("click", clearTitle);
+minutes.addEventListener("click", restoreTitle);
+seconds.addEventListener("click", restoreTitle);
+secondsOne.addEventListener("click", restoreTitle);
 
 // Run every second
 setInterval(updateCountdownFive, 1000);
