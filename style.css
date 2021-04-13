@@ -129,22 +129,3 @@ h1 {
     background-position: 0% 50%;
   }
 }
-
-@media (max-width: 500px) {
-  h1 {
-    font-size: 45px;
-  }
-
-  .time {
-    margin: 5px;
-  }
-
-  .time h2 {
-    font-size: 12px;
-    margin: 0;
-  }
-
-  .time small {
-    font-size: 10px;
-  }
-}
