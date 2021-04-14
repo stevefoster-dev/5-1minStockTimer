@@ -37,7 +37,13 @@ function updateCountdownFive() {
   minutes.innerHTML = m < 10 ? "0" + m : m;
   seconds.innerHTML = s < 10 ? "0" + s : s;
 
-  if (m === 4) {
+  if (m === 4 && clicked === 1) {
+    fiveMinute.style.background = "blue";
+    fiveMinute.style.color = "white";
+    seconds.style.fontSize = "250%";
+    minutes.style.display = "block";
+    colon.style.display = "block";
+  } else if (m === 4 && clicked === 0) {
     fiveMinute.style.background = "blue";
     fiveMinute.style.color = "white";
     seconds.style.fontSize = "150%";
@@ -52,10 +58,16 @@ function updateCountdownFive() {
   } else if (m === 0 && s >= 31) {
     fiveMinute.style.background = "yellow";
     fiveMinute.style.color = "black";
-  } else if (m === 0 && s <= 30) {
+  } else if (m === 0 && s <= 30 && clicked === 0) {
     fiveMinute.style.background = "white";
     fiveMinute.style.color = "black";
-    seconds.style.fontSize = "250%";
+    seconds.style.fontSize = "300%";
+    minutes.style.display = "none";
+    colon.style.display = "none";
+  } else if (m === 0 && s <= 30 && clicked === 1) {
+    fiveMinute.style.background = "white";
+    fiveMinute.style.color = "black";
+    seconds.style.fontSize = "550%";
     minutes.style.display = "none";
     colon.style.display = "none";
   }
@@ -90,7 +102,7 @@ function updateCountdownOne() {
   } else if (s >= 0) {
     oneMinute.style.background = "white";
     oneMinute.style.color = "black";
-    oneMinute.style.fontSize = "250%";
+    oneMinute.style.fontSize = "220%";
   }
 }
 
@@ -101,6 +113,7 @@ function clearTitle() {
   minutes.style.fontSize = "250%";
   seconds.style.fontSize = "250%";
   secondsOne.style.fontSize = "250%";
+  clicked = 1;
 }
 
 // Restore h1
@@ -110,6 +123,7 @@ function restoreTitle() {
   minutes.style.fontSize = "150%";
   seconds.style.fontSize = "150%";
   secondsOne.style.fontSize = "150%";
+  clicked = 0;
 }
 
 // Show spinner before countdown
