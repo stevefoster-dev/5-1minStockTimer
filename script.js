@@ -10,10 +10,13 @@ const fiveMinute = document.getElementById("fiveMinute");
 const oneMinute = document.getElementById("oneMinute");
 const minimizeFive = document.getElementById("minimizeFive");
 const minimizeOne = document.getElementById("minimizeOne");
+const colon = document.getElementById("colon");
 
 const currentYear = new Date().getFullYear();
 
 const newYearTime = new Date(`December 31 ${currentYear} 00:00:00`);
+
+let clicked = 0;
 
 // Set background year
 year.innerText = currentYear;
@@ -37,20 +40,27 @@ function updateCountdownFive() {
   if (m === 4) {
     fiveMinute.style.background = "blue";
     fiveMinute.style.color = "white";
+    seconds.style.fontSize = "150%";
+    minutes.style.display = "block";
+    colon.style.display = "block";
   } else if (m === 3) {
-    fiveMinute.style.background = "purple";
+    fiveMinute.style.background = "#6100e8";
   } else if (m === 2) {
-    fiveMinute.style.background = "magenta";
+    fiveMinute.style.background = "#a00fc7";
   } else if (m === 1) {
     fiveMinute.style.background = "orange";
-  } else if (m === 0 && s >= 30) {
+  } else if (m === 0 && s >= 31) {
     fiveMinute.style.background = "yellow";
     fiveMinute.style.color = "black";
   } else if (m === 0 && s <= 30) {
     fiveMinute.style.background = "white";
     fiveMinute.style.color = "black";
+    seconds.style.fontSize = "250%";
+    minutes.style.display = "none";
+    colon.style.display = "none";
   }
 }
+
 // Update Countdown time One Minute
 function updateCountdownOne() {
   const currentTime = new Date();
@@ -67,10 +77,11 @@ function updateCountdownOne() {
   if (s >= 51) {
     oneMinute.style.background = "blue";
     oneMinute.style.color = "white";
+    oneMinute.style.fontSize = "100%";
   } else if (s >= 41) {
-    oneMinute.style.background = "purple";
+    oneMinute.style.background = "#6100e8";
   } else if (s >= 31) {
-    oneMinute.style.background = "magenta";
+    oneMinute.style.background = "#a00fc7";
   } else if (s >= 21) {
     oneMinute.style.background = "orange";
   } else if (s >= 11) {
@@ -79,6 +90,7 @@ function updateCountdownOne() {
   } else if (s >= 0) {
     oneMinute.style.background = "white";
     oneMinute.style.color = "black";
+    oneMinute.style.fontSize = "250%";
   }
 }
 

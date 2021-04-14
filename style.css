@@ -81,6 +81,7 @@ h1 {
 
 .time h2 {
   margin: 0 0 5px;
+  cursor: pointer;
 }
 
 .oneMinute {
