@@ -61,7 +61,7 @@ function updateCountdownFive() {
   } else if (m === 0 && s <= 30 && clicked === 0) {
     fiveMinute.style.background = "white";
     fiveMinute.style.color = "black";
-    seconds.style.fontSize = "300%";
+    seconds.style.fontSize = "350%";
     minutes.style.display = "none";
     colon.style.display = "none";
   } else if (m === 0 && s <= 30 && clicked === 1) {
@@ -136,6 +136,7 @@ setTimeout(() => {
 minimizeFive.addEventListener("click", clearTitle);
 minimizeOne.addEventListener("click", clearTitle);
 minutes.addEventListener("click", restoreTitle);
+colon.addEventListener("click", restoreTitle);
 seconds.addEventListener("click", restoreTitle);
 secondsOne.addEventListener("click", restoreTitle);
 

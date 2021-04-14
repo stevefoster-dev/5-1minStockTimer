@@ -69,8 +69,10 @@ h1 {
 
 .time span {
   transform: scale(2);
-  padding: 4px;
-  margin-bottom: 12px;
+  padding-left: 4px;
+  padding-right: 4px;
+  margin-bottom: 14px;
+  cursor: pointer;
 }
 
 .time {
