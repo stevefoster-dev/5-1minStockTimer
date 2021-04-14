@@ -11,12 +11,22 @@ const oneMinute = document.getElementById("oneMinute");
 const minimizeFive = document.getElementById("minimizeFive");
 const minimizeOne = document.getElementById("minimizeOne");
 const colon = document.getElementById("colon");
+const goFS = document.getElementById("goFS");
 
 const currentYear = new Date().getFullYear();
 
 const newYearTime = new Date(`December 31 ${currentYear} 00:00:00`);
 
 let clicked = 0;
+
+// Go Fullscreen
+goFS.addEventListener(
+  "click",
+  function () {
+    document.body.requestFullscreen();
+  },
+  false
+);
 
 // Set background year
 year.innerText = currentYear;
